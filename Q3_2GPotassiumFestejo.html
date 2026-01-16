@@ -1,0 +1,81 @@
+<html>
+<head>
+
+<style>
+    body {
+        background-color: rgb(1, 39, 51);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+    }
+
+    h1 {
+        color: rgb(100, 100, 168);
+    }
+
+    input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+
+    }
+</style>
+
+</head>
+
+<body>    
+    
+    <form onsubmit="return validateForm()" onreset="return confirmReset()">
+        <label>Student ID <input type="number" name="id" required></label><br><br>
+        <label>Full Name: <input type="text" name="name" required></label><br><br>
+        <label>Birthday: <input type="date" name="birthday" required></label><br><br>
+        <label>Email: <input type="email" name="email" required></label><br><br>
+        <label>Mobile Number: <input type="text" name="number" required></label><br><br>
+        <label for="grade">Grade Level:</label>
+        <select id="grade" name="grade">
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        </select><br><br>
+
+        <label>Residence: <br>
+        <input type="checkbox" id="extern1" name="extern" value="Extern">
+        <label for="extern1"> Extern</label><br>
+        <input type="checkbox" id="intern2" name="intern" value="Intern">
+        <label for="intern2"> Intern</label><br>
+        </label>
+
+        <label for="clubs">Choose a club:</label>
+        <select id="clubs" name="clubs">
+        <option value="eng">Recreational Engineering</option>
+        <option value="phys">Astro-Physics</option>
+        <option value="geo">Global Geography</option>
+        <option value="pol">Political Science</option>
+        <option value="mc">Minecraft Mania</option>
+        </select><br><br>
+        <label>Why join? <input type="text" name="join" required></label><br><br>
+        
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </form>
+    
+      <script>
+        function validateForm() {
+          alert("Form submitted successfully!");
+          return true; // return false to stop submission
+        }
+    
+        function confirmReset() {
+          return confirm("Do you want to reset?");
+        }
+      </script>
+
+
+</body>
+
+
+</html>
