@@ -1,0 +1,130 @@
+<html>
+<head>
+<style>
+    body {
+        background-color: rgb(9, 4, 60);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+        color:darkgoldenrod;
+    }
+
+    h1 {
+        color: rgb(100, 100, 168);
+    }
+
+    th, td {
+        margin: 10px;
+        width: 125px;
+        padding: 10px;
+        border: 1px solid darkgoldenrod;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    button{
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(9, 4, 60);
+        color: darkgoldenrod;
+        border: 2px solid darkgoldenrod;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>    
+    <h1>Club Member List</h1>
+
+    <label for="clubs">Select your club:</label>
+    <select id="clubs" name="clubs">
+        <option value="eng">Recreational Engineering</option>
+        <option value="phys">Astro-Physics</option>
+        <option value="geo">Global Geography</option>
+        <option value="pol">Political Science</option>
+        <option value="mc">Minecraft Mania</option>
+    </select><br><br>
+
+    Total Sign-Ups:
+    <script>
+        document.write(localStorage.length / 11);
+    </script>
+    <br><br>
+
+    <table style="margin-left:auto; margin-right:auto;">
+        <thead>
+            <tr>
+                <th>Club</th>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Grade</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Residence</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><script>document.write(localStorage.getItem("Club"))</script></td>
+                <td><script>document.write(localStorage.getItem("StudentID"))</script></td>
+                <td><script>document.write(localStorage.getItem("FullName"))</script></td>
+                <td><script>document.write(localStorage.getItem("GradeLevel"))</script></td>
+                <td><script>document.write(localStorage.getItem("Email"))</script></td>
+                <td><script>document.write(localStorage.getItem("MobileNumber"))</script></td>
+                <td>
+                    <script>
+                        
+        function validateForm() {
+          
+            localStorage.setItem("StudentID", document.forms[0]["id"].value);
+            localStorage.getItem("StudentID");
+
+            localStorage.setItem("FullName", document.forms[0]["name"].value);  
+            localStorage.getItem("FullName");
+
+            localStorage.setItem("Birthday", document.forms[0]["birthday"].value);
+            localStorage.getItem("Birthday");
+
+            localStorage.setItem("Email", document.forms[0]["email"].value);
+            localStorage.getItem("Email");
+
+            localStorage.setItem("MobileNumber", document.forms[0]["number"].value);
+            localStorage.getItem("MobileNumber");
+
+            localStorage.setItem("GradeLevel", document.forms[0]["grade"].value);
+            localStorage.getItem("GradeLevel");
+
+            localStorage.setItem("Residence", document.forms[0]["extern"].checked);
+            localStorage.getItem("Residence");
+
+            localStorage.setItem("Residence", document.forms[1]["intern"].checked);
+            localStorage.getItem("Residence");
+
+            localStorage.setItem("Club", document.forms[0]["clubs"].value);
+            localStorage.getItem("Club");
+
+            localStorage.setItem("WhyJoin", document.forms[0]["join"].value);
+            localStorage.getItem("WhyJoin");
+
+          alert("Form submitted successfully!");
+          return true; // return false to stop submission
+        }
+    
+        function confirmReset() {
+          return confirm("Do you want to reset?");
+        }
+         </script>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="window.location.href='Q3_3GPotassiumFestejo.html'">
+        Back to Sign-Up Form
+    </button>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+<head>
+
+<style>
+    body {
+        background-color: rgb(9, 4, 60);
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        text-align: center;
+        padding: 50px;
+        color:darkgoldenrod;
+    }
+
+    h1 {
+        color: rgb(100, 100, 168);
+    }
+
+    input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+
+    }
+
+    button, form input[type="submit"], form input[type="reset"] {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(9, 4, 60);
+        color: darkgoldenrod;
+        border: 2px solid darkgoldenrod;
+        cursor: pointer;
+    }
+
+</style>
+
+</head>
+
+<body>    
+
+    <h1 style="text-align: center;">Club Sign-Up Form</h1>
+    
+    <form onsubmit="return validateForm()" onreset="return confirmReset()">
+        <label>Student ID <input type="number" name="id" required></label><br><br>
+        <label>Full Name: <input type="text" name="name" required></label><br><br>
+        <label>Birthday: <input type="date" name="birthday" required></label><br><br>
+        <label>Email: <input type="email" name="email" required></label><br><br>
+        <label>Mobile Number: <input type="text" name="number" required></label><br><br>
+        <label for="grade">Grade Level:</label>
+        <select id="grade" name="grade">
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        </select><br><br>
+
+        <label>Residence: <br>
+        <input type="checkbox" id="extern1" name="extern" value="Extern">
+        <label for="extern1"> Extern</label><br>
+        <input type="checkbox" id="intern2" name="intern" value="Intern">
+        <label for="intern2"> Intern</label><br>
+        </label>
+
+        <label for="clubs">Choose a club:</label>
+        <select id="clubs" name="clubs">
+        <option value="eng">Recreational Engineering</option>
+        <option value="phys">Astro-Physics</option>
+        <option value="geo">Global Geography</option>
+        <option value="pol">Political Science</option>
+        <option value="mc">Minecraft Mania</option>
+        </select><br><br>
+        <label>Why join? <input type="text" name="join" required></label><br><br>
+        
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </form>
+    
+<script>
+        function validateForm() {
+          
+            localStorage.setItem("StudentID", document.forms[0]["id"].value);
+            localStorage.getItem("StudentID");
+
+            localStorage.setItem("FullName", document.forms[0]["name"].value);  
+            localStorage.getItem("FullName");
+
+            localStorage.setItem("Birthday", document.forms[0]["birthday"].value);
+            localStorage.getItem("Birthday");
+
+            localStorage.setItem("Email", document.forms[0]["email"].value);
+            localStorage.getItem("Email");
+
+            localStorage.setItem("MobileNumber", document.forms[0]["number"].value);
+            localStorage.getItem("MobileNumber");
+
+            localStorage.setItem("GradeLevel", document.forms[0]["grade"].value);
+            localStorage.getItem("GradeLevel");
+
+            localStorage.setItem("Residence", document.forms[0]["extern"].checked);
+            localStorage.getItem("Residence");
+
+            localStorage.setItem("Residence", document.forms[1]["intern"].checked);
+            localStorage.getItem("Residence");
+
+            localStorage.setItem("Club", document.forms[0]["clubs"].value);
+            localStorage.getItem("Club");
+
+            localStorage.setItem("WhyJoin", document.forms[0]["join"].value);
+            localStorage.getItem("WhyJoin");
+
+          alert("Form submitted successfully!");
+          return true; // return false to stop submission
+        }
+    
+        function confirmReset() {
+          return confirm("Do you want to reset?");
+        }
+      </script>
+
+
+      <button onclick="window.location.href='viewSignUps.html'">View Sign-Ups</button>
+
+</body>
+
+
+</html>
